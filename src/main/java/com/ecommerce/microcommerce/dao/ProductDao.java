@@ -2,7 +2,6 @@ package com.ecommerce.microcommerce.dao;
 
 import java.util.List;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -21,5 +20,6 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     @Query("SELECT id, nom, prix FROM Product p WHERE p.prix > :prixLimit")
     List<Product>  chercherUnProduitCher(@Param("prixLimit") int prix);
-   
+    
+    List<Product> findByOrderByNomAsc();
 }

@@ -136,5 +136,8 @@ public class ProductController {
         return produitsFiltres;
     }
     
-   
+    //renvoie la liste des produits triés par ordre alphabétique
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+    	return productDao.findByOrderByNomAsc();
+    }
 }
