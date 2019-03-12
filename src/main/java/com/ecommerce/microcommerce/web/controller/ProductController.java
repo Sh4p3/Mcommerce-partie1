@@ -48,7 +48,7 @@ public class ProductController {
 
     public MappingJacksonValue listeProduits() {
 
-        Iterable<Product> produits = productDao.findAll();
+        Iterable<Product> produits = trierProduitsParOrdreAlphabetique();//productDao.findAll();
 
         SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
 
